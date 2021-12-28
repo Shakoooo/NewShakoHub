@@ -1,0 +1,111 @@
+-- Made by Shako#7960
+
+
+
+local ScreenGui = Instance.new("ScreenGui")
+local ShakoNewHub = Instance.new("Frame")
+local Titre = Instance.new("TextLabel")
+local OlderVersion = Instance.new("TextButton")
+local NewestVersion = Instance.new("TextButton")
+local Credits = Instance.new("TextLabel")
+local Close = Instance.new("TextButton")
+local Open = Instance.new("TextButton")
+
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+ShakoNewHub.Name = "ShakoNewHub"
+ShakoNewHub.Parent = ScreenGui
+ShakoNewHub.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+ShakoNewHub.Position = UDim2.new(0.293103456, 0, 0.341104299, 0)
+ShakoNewHub.Size = UDim2.new(0, 503, 0, 273)
+ShakoNewHub.Visible = false
+ShakoNewHub.Active = true
+ShakoNewHub.Draggable = true
+
+Titre.Name = "Titre"
+Titre.Parent = ShakoNewHub
+Titre.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Titre.Size = UDim2.new(0, 503, 0, 31)
+Titre.Font = Enum.Font.LuckiestGuy
+Titre.Text = "Shako - Hub"
+Titre.TextColor3 = Color3.fromRGB(255, 255, 255)
+Titre.TextSize = 23.000
+
+OlderVersion.Name = "Older Version"
+OlderVersion.Parent = ShakoNewHub
+OlderVersion.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+OlderVersion.Position = UDim2.new(0.0477137193, 0, 0.252747267, 0)
+OlderVersion.Size = UDim2.new(0, 189, 0, 140)
+OlderVersion.Font = Enum.Font.SciFi
+OlderVersion.Text = "Older Version"
+OlderVersion.TextColor3 = Color3.fromRGB(0, 0, 0)
+OlderVersion.TextSize = 25.000
+OlderVersion.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet(('https://raw.githubusercontent.com/Shakoooo/ShakoGUIFirstTest/main/ShakoGUI'),true))() 
+end)
+
+NewestVersion.Name = "Newest Version"
+NewestVersion.Parent = ShakoNewHub
+NewestVersion.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+NewestVersion.Position = UDim2.new(0.59045732, 0, 0.252747267, 0)
+NewestVersion.Size = UDim2.new(0, 189, 0, 140)
+NewestVersion.Font = Enum.Font.SciFi
+NewestVersion.Text = "Newest Version"
+NewestVersion.TextColor3 = Color3.fromRGB(0, 0, 0)
+NewestVersion.TextSize = 25.000
+NewestVersion.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet(('https://raw.githubusercontent.com/Shakoooo/ShakoGUIRoblox/main/script'),true))() 
+end)
+
+Credits.Name = "Credits"
+Credits.Parent = ShakoNewHub
+Credits.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Credits.Position = UDim2.new(0, 0, 0.886446893, 0)
+Credits.Size = UDim2.new(0, 503, 0, 31)
+Credits.Font = Enum.Font.LuckiestGuy
+Credits.Text = "Made by Shako#7960"
+Credits.TextColor3 = Color3.fromRGB(255, 255, 255)
+Credits.TextSize = 23.000
+
+Close.Name = "Close"
+Close.Parent = ShakoNewHub
+Close.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Close.Position = UDim2.new(0.95029819, 0, 0, 0)
+Close.Size = UDim2.new(0, 25, 0, 31)
+Close.Font = Enum.Font.SourceSans
+Close.Text = "X"
+Close.TextColor3 = Color3.fromRGB(255, 15, 15)
+Close.TextSize = 14.000
+
+Open.Name = "Open"
+Open.Parent = ScreenGui
+Open.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Open.BorderColor3 = Color3.fromRGB(255, 255, 255)
+Open.BorderSizePixel = 2
+Open.Position = UDim2.new(0, 0, 0.494478524, 0)
+Open.Size = UDim2.new(0, 115, 0, 29)
+Open.Font = Enum.Font.SciFi
+Open.Text = "Open"
+Open.TextColor3 = Color3.fromRGB(255, 255, 255)
+Open.TextSize = 14.000
+
+-- Scripts:
+
+local function MGCPCHL_fake_script() -- Close.LocalScript 
+	local script = Instance.new('LocalScript', Close)
+
+	script.Parent.Parent.Close.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Parent.ShakoNewHub.Visible = false
+	end)
+end
+coroutine.wrap(MGCPCHL_fake_script)()
+local function OVDVN_fake_script() -- Open.LocalScript 
+	local script = Instance.new('LocalScript', Open)
+
+	script.Parent.Parent.Open.MouseButton1Click:Connect(function()
+		script.Parent.Parent.ShakoNewHub.Visible = true
+	end)
+end
+coroutine.wrap(OVDVN_fake_script)()
